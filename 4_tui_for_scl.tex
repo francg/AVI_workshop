@@ -1,4 +1,4 @@
-We identified a list of primitives at different semantic levels useful to describe, design and author applications for SCL supported by smart objects and TUIs:
+We identified a list of primitives at different semantic levels useful to describe, design and author applications for SCL supported by SOs and TUIs:
 
 \begin{figure}[htb]
 \centering
@@ -13,7 +13,7 @@ We identified a list of primitives at different semantic levels useful to descri
 
 \subsubsection{PHYSICAL MANIPULATION}
 \begin{description}
-\item [Touch] as the ability to detect finger interactions like a simple touch, swipes, multiple taps et simila;
+\item [Touch] as the ability to detect interactions like a simple touch, swipes, multiple taps et simila;
 \item [Multi-axial rotation] detects with sufficient precision object rotation and tilt;
 \item [Shake and displacement] intended as the ability to detect when the object is shaken vigorously or is being physically moved.
 \end{description}
@@ -38,15 +38,15 @@ We identified a list of primitives at different semantic levels useful to descri
 
 \subsubsection{DATA}
 \begin{description}
-\item [Sensor data collection] intended as the opportunity to employ data gathered in real time from the surrounding ambient;
-\item [Data visualization] as the ability to support visualization of simple information through low fidelity output;
+\item [Sensor data collection] intended as the opportunity to employ data gathered in real time from the surrounding ambient. Domain specific data can include for example air pollution, geolocation, temperature;
+\item [Data visualization] as the ability to support visualization of simple information through low fidelity output. Adapting to the domain implies that only a specific subset of data visualization strategies are suitable. It is also important to trigger the learning process and help the users reflect on their experience;
 \item [Data processing] involves elaboration of data coming from sensors and/or from third party services.
 \end{description}
 
 \subsubsection{INTERACTION STRATEGIES}
 \begin{description}
-\item [Object sharing] smart objects should be physically shareable, retaining their physical behavior. Augmenting the object with technology should not restrict its original affordances.
-Background/foreground: interaction should be possible when the object is in the center of attention, but also when in background, providing context information possibly through glances and nudging;
+\item [Object sharing] intended more as a dimension, SOs allow to freely move from the private and personal sphere to sharable artifacts and community objects, continuously exploring the space in between;
+\item [Background/foreground] interaction should be possible when the object is in the center of attention, but also when in background, providing context information possibly through glances and nudging;
 \item [Distributed] interaction with several augmented objects orchestrated as a single user interface;
 \item [Multimodal] object interaction based on more than one strategy, e.g. touch and speech recognition on the same object;
 \item [Sensor based] it's an enabler for physical manipulation, since smart objects do not provide a dedicated interaction interface (like a keyboard or buttons), the interaction happens with the object itself.
@@ -66,13 +66,15 @@ Background/foreground: interaction should be possible when the object is in the 
 \end{description}
 
 \subsection{Challenges}
-Although the need for a set of authoring primitives is driven by the possibility to follow a more lightweight design approach and to better adapt to the context, a series of challenges are still observable.
+Although the need for a set of authoring primitives is driven by the possibility to follow a more lightweight design approach and to better adapt to the context, defining an appropriate semantic level can be intricate since it is closely related to the skills of the target group (end-users, developers, designers, etc).
+A series of challenges are also connected to the authoring process:
 
 \begin{itemize}
-    \item Several semantic levels require several competencies, which implies that collaboration among experts is fundamental to address complexity along multiple dimensions, that is a component of SCL applications;
-    \item Defining an appropriate semantic level can be intricate since it is closely related to the skills of the target group (end-users, developers, designers, etc);
+    \item Several semantic levels require several competencies, which implies that collaboration among experts is fundamental to address complexity along multiple dimensions;
+    \item Proposed primitives can be combined in multiple ways, picking the best alternatives for each application can still be challenging;
     \item Data are a valuable source of knowledge to improve the design process, analytics are important to keep track of the process and spot opportunities for improvements;
-    \item Promoting creativity is essential when dealing with different target groups, it is important to balance and define the primitive in a way that are useful to guide the design without introducing heavy constraints that can hinder creativity and original solutions.
+    \item The learning process can follow several approaches. Based on the specific domain, can be challenging to find the most effective;
+    \item Promoting creativity is essential when dealing with different target groups, it is important to balance and define the primitives in a way that are useful to guide the design without introducing heavy constraints that can hinder creativity and original solutions.
 \end{itemize}
 
 \subsection{Examples of applications}
@@ -80,4 +82,10 @@ Example of SCL applications resulting from this approach can be situated augment
 
 Another example can involve the use of augmented objects to facilitate cooperation between communities in the city. The process of urban planning in Norway require the municipalities to gather feedback from communities of citizens.
 Difficulties has been encountered in providing value in the process, since traditional methods do not fit well when dealing with children for example.
-Dealing with smart objects that can be physically manipulated and provide an engaging experience can motivate and attract participants to collaborate and at the same time stimulate their creativity.
+Using smart objects that can be physically manipulated and provide an engaging experience can motivate and attract participants to collaborate and at the same time stimulate their creativity.
+
+\subsection{TILES toolkit for AOs}
+Tiles is a rapid prototyping toolkit for AOs, it is composed by: (i) a set of abstracted physical interaction primitives and composition rules, (ii) hardware modules with sensors and actuators to generate and consume primitives, (iii) a software framework to allow manipulation and use of primitives within a specific application logic. TILES toolbox aim at supporting the iterative process of building prototypes of interactive objects, using abstract primitives developed as a bridge to gracefully support the transition between design and implementation steps. Prototypes might then be released for user testing.
+
+TILES is a promising project that fits very well with the generic authoring primitives defined above. It is designed taking into account many of the challenges usually found in prototyping toolkits.
+TILES' flexible software framework and event-driven messaging system allow to develop abstractions at different semantic levels for the coding process. This helps to match more closely the skills of end users, developer, designers and possibly other categories.
